@@ -1,0 +1,113 @@
+/* Body background animation */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #f9f9f9, #ade8f4, #90e0ef, #48cae4);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Navigation bar */
+nav {
+  background: linear-gradient(to right, #11dbff, #12c0f0);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  transform: scale(1.1);
+}
+
+/* Section animation */
+.section {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Profile picture */
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  display: block;
+  margin: 1rem auto;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 174, 255, 0.6);
+}
+
+/* Text animation */
+h1, h2, p {
+  animation: fadeSlide 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0077b6;
+  color: white;
+}
